@@ -82,7 +82,8 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov-report=xml since I'm just running tests locally and don't need the XML output
 # Added -x to stop on first failure — makes the feedback loop faster during local dev
-addopts = "--cov=swarms --cov-report=term-missing -x"
+# Removed -x for now: I want to see all failures at once when doing a broader refactor pass
+addopts = "--cov=swarms --cov-report=term-missing"
 
 [tool.coverage.run]
 source = ["swarms"]
