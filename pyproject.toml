@@ -81,7 +81,8 @@ ignore_missing_imports = true
 testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov-report=xml since I'm just running tests locally and don't need the XML output
-addopts = "--cov=swarms --cov-report=term-missing"
+# Added -x to stop on first failure — makes the feedback loop faster during local dev
+addopts = "--cov=swarms --cov-report=term-missing -x"
 
 [tool.coverage.run]
 source = ["swarms"]
