@@ -1,16 +1,39 @@
-from swarms.env import load_swarms_env
+"""Swarms - A framework for orchestrating multi-agent AI systems.
 
-load_swarms_env()
+This package provides tools and abstractions for building, managing,
+and deploying swarms of AI agents that can collaborate to solve complex tasks.
+"""
 
-from swarms.telemetry.bootup import bootup  # noqa: E402, F403
+from swarms.agents import Agent
+from swarms.swarms import (
+    BaseSwarm,
+    SequentialWorkflow,
+    ConcurrentWorkflow,
+    MixtureOfAgents,
+)
+from swarms.memory import BaseMemory, ConversationMemory
+from swarms.prompts import SystemPrompt
+from swarms.utils.loguru_logger import logger
 
-bootup()
+__version__ = "0.1.0"
+__author__ = "Swarms Team"
+__license__ = "MIT"
 
-from swarms.agents import *  # noqa: E402, F403
-from swarms.artifacts import *  # noqa: E402, F403
-from swarms.prompts import *  # noqa: E402, F403
-from swarms.schemas import *  # noqa: E402, F403
-from swarms.structs import *  # noqa: E402, F403
-from swarms.telemetry import *  # noqa: E402, F403
-from swarms.tools import *  # noqa: E402, F403
-from swarms.utils import *  # noqa: E402, F403
+__all__ = [
+    # Core agent
+    "Agent",
+    # Swarm orchestration
+    "BaseSwarm",
+    "SequentialWorkflow",
+    "ConcurrentWorkflow",
+    "MixtureOfAgents",
+    # Memory
+    "BaseMemory",
+    "ConversationMemory",
+    # Prompts
+    "SystemPrompt",
+    # Utilities
+    "logger",
+    # Metadata
+    "__version__",
+]
