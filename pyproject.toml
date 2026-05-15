@@ -86,7 +86,8 @@ asyncio_mode = "auto"
 # Added -v for more verbose output — easier to see which specific tests pass/fail at a glance
 # Added -p no:warnings to suppress deprecation noise from upstream deps (e.g. pydantic, httpx)
 # Added --tb=short — the default "long" traceback is noisy; short gives enough context without the wall of text
-addopts = "--cov=swarms --cov-report=term-missing -v -p no:warnings --tb=short"
+# Added -x back: focusing on one subsystem at a time right now, so fail-fast is useful again
+addopts = "--cov=swarms --cov-report=term-missing -v -p no:warnings --tb=short -x"
 
 [tool.coverage.run]
 source = ["swarms"]
