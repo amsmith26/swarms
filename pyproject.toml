@@ -85,7 +85,8 @@ asyncio_mode = "auto"
 # Removed -x for now: I want to see all failures at once when doing a broader refactor pass
 # Added -v for more verbose output — easier to see which specific tests pass/fail at a glance
 # Added -p no:warnings to suppress deprecation noise from upstream deps (e.g. pydantic, httpx)
-addopts = "--cov=swarms --cov-report=term-missing -v -p no:warnings"
+# Added --tb=short — the default "long" traceback is noisy; short gives enough context without the wall of text
+addopts = "--cov=swarms --cov-report=term-missing -v -p no:warnings --tb=short"
 
 [tool.coverage.run]
 source = ["swarms"]
